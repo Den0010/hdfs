@@ -1,0 +1,12 @@
+hdfs dfs -copyFromLocal /home/cloudera/Desktop/vim1.txt /user/cloudera
+hdfs dfs -copyFromLocal /home/cloudera/Desktop/vim2.txt /user/cloudera
+hdfs dfs -copyFromLocal /home/cloudera/Desktop/vim3.txt /user/cloudera
+hdfs dfs -copyFromLocal /home/cloudera/Desktop/vim4.txt /user/cloudera
+hdfs dfs -ls
+hdfs dfs -getmerge -nl vim1.txt vim2.txt vim3.txt vim4.txt /home/cloudera/Desktop/vim.txt
+hdfs dfs -chmod 764 /user/cloudera/vim.txt
+hdfs dfs -ls
+hdfs dfs -du vim.txt
+hdfs dfs -setrep -R -w 2 vim.txt
+hdfs dfs -du vim.txt
+hdfs dfs -cat vim.txt | wc -l  
